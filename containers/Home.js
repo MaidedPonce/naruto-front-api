@@ -10,7 +10,7 @@ const Home = () => {
             .fetch("/api/avo")
             .then((response) => response.json())
             .then(({ data, length }) => setProductList(data));
-    }, []);
+    }, [])
 
     return (
         <section className={styles.section}>
