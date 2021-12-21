@@ -1,4 +1,4 @@
-const data = {
+export const data: any = {
   '2zd33b8c': {
     name: 'Naruto',
     last: 'Uzumaki',
