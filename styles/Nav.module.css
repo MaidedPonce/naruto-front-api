@@ -1,0 +1,31 @@
+.nav {
+    align-items: center;
+    border-bottom: 1px solid #8d8d8d;
+    box-shadow: -1px 4px 5px 0px #a7a7a7;
+    display: flex;
+    font-size: 2rem;
+    justify-content: space-between;
+    height: 170px;
+    margin-bottom: 50px;
+    padding: 0 3%;
+    width: auto;
+}
+
+.figureNav {
+    display: flex;
+    height: 30%;
+    margin: 0;
+    justify-content: flex-end;
+    width: 50%;
+}
+
+.figureNav > span {
+    flex: 1;
+}
+
+@media only screen and (min-width: 768px) {
+    .figureNav {
+        height: 30%;
+        width: 12%;
+    }
+}

@@ -1,0 +1,40 @@
+.footer {
+    background: #3e3e48;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    height: 50vh;
+    font-size: 1rem;
+    margin-top: 50px;
+    justify-content: space-evenly;
+    padding: 3% 3% 0;
+}
+
+.figureCodepen {
+    height: 50px;
+    width: 50px;
+}
+
+.spanSM {
+    font-size: 2rem;
+}
+
+.figureCodepen > img {
+    height: inherit;
+    width: inherit;
+}
+
+.containerSM {
+    display: flex;
+}
+
+@media only screen and (min-width: 400px) {
+    .footerSM {
+        align-items: center;
+        display: flex;
+        justify-content: space-evenly;
+    }
+    .spanDerec {
+        text-align: center;
+    }
+}
