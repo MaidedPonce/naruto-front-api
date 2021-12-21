@@ -2,7 +2,7 @@
     "compilerOptions": {
         "baseUrl": ".",
         "paths": {
-            "@database": ["database/db.ts"],
+            "@database": ["database/db.js"],
             "@componentes/*": ["components/*"],
             "@containers/*": ["containers/*"]
         },
@@ -30,7 +30,7 @@
         "pages/api/avo/[id].ts",
         "pages/api/avo/index.ts",
         "pages/api/avo/[id].ts",
-        "database/data.ts",
-        "database/db.ts"
+        "database/data.js",
+        "database/db.js"
     ]
 }
