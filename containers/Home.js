@@ -1,39 +1,21 @@
 import React, { useState, useEffect } from "react";
 import fetch from "isomorphic-unfetch";
-import styles from "../styles/Home.module.css";
-import Image from "next/image";
-import Link from "next/link";
+import Character from "../components/Character.js"
 
-export const getServerSideProps = async (p) => {
-    const res = await fetch("/api/avo");
-    const { data } = await res.json();
+
+export const getServerSideProps = async () => {
+    const response = await fetch("https://localhost:3000/api/avo");
+    const { data: productList } = await response.json();
     return {
         props: {
-            productList: data,
+            productList,
         },
     };
 };
 
 const Home = ({ productList }) => {
     return (
-        <section className={styles.section}>
-            {productList.map((item) => (
-                <Link href={`character/${item.id}`}>
-                    <div className={styles.card} key={item.id}>
-                        <figure className={styles.figure}>
-                            <Image width="190" height="190" src={item.image} />
-                        </figure>
-                        <div className={styles.details}>
-                            <span>{item.name}</span>
-                            <span>
-                                <b>{item.last}</b>
-                            </span>
-                            <span>{item.aldea}</span>
-                        </div>
-                    </div>
-                </Link>
-            ))}
-        </section>
+        <Character productList={productList} />
     );
 };
 
