@@ -1,13 +1,19 @@
 import React, { useState, useEffect } from "react";
-import Navbar from "../components/Navbar";
-import Home from "../containers/Home";
+import Character from "../components/Character";
 
-const PrincipalPage = () => {
+export const getServerSideProps = async () => {
+    const response = await fetch("https://naruto-front-api-git-master-maidedponce.vercel.app/api/avo");
+    const { data: productList } = await response.json();
+    return {
+        props: {
+            productList,
+        },
+    };
+};
+const PrincipalPage = ({productList}) => {
     
     return (
-        <div>
-            <Home />
-        </div>
+        <Character productList={productList} />
     )
 }
 
