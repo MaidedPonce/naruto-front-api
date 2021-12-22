@@ -19,6 +19,7 @@ const Footer = () => {
                     </a>
                 </div>
             </div>
+            <span className={styles.spanDerec}>Fuentes: WikiFandom</span>
             <span className={styles.spanDerec}>Todos los derechos reservados</span>
         </footer>
     );

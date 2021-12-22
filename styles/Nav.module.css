@@ -5,7 +5,7 @@
     display: flex;
     font-size: 2rem;
     justify-content: space-between;
-    height: 170px;
+    height: 110px;
     margin-bottom: 50px;
     padding: 0 3%;
     width: auto;
@@ -13,19 +13,13 @@
 
 .figureNav {
     display: flex;
-    height: 30%;
+    height: auto;
     margin: 0;
     justify-content: flex-end;
-    width: 50%;
+    width: auto;
 }
 
 .figureNav > span {
     flex: 1;
 }
 
-@media only screen and (min-width: 768px) {
-    .figureNav {
-        height: 30%;
-        width: 12%;
-    }
-}

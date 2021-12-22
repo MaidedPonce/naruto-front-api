@@ -2,6 +2,11 @@
     display: flex;
     flex-direction: column;
 }
+
+.sectionDiv:hover .card {
+    transform-style: preserve-3d;
+}
+
 .card {
     align-items: center;
     border-radius: 3%;
@@ -11,8 +16,72 @@
     height: 300px;
     margin: auto;
     margin-bottom: 20px;
-    overflow: hidden;
     width: 300px;
+    position: relative;
+    transition: all 1s linear;
+    transform-style: preserve-3d;
+}
+
+.cardC {
+    align-items: center;
+    backface-visibility: hidden;
+    display: flex;
+    flex-direction: column;
+    height: 90%;
+    position: absolute;
+    z-index: 2;
+    width: -webkit-fill-available;
+}
+
+.card:hover {
+    transform: rotateY(180deg);
+    transition: transform 1s;
+}
+
+.cardBack {
+    align-items: center;
+    backface-visibility: hidden;
+    display: flex;
+    height: 300px;
+    transform: rotateY(180deg);
+    position: absolute;
+    flex-direction: column;
+    justify-content: center;
+    width: 300px;
+    z-index: 1;
+}
+
+.cardBackItem {
+    align-items: center;
+    background: blue;
+    display: flex;
+    justify-content: center;
+    height: 150px;
+    width: 300px;
+}
+
+.cardBack, .cardC {
+    border-radius: 3%;
+}
+
+.seeMore {
+    font-size: 1.2rem;
+    margin-bottom: -20px;
+}
+
+.seeMore:hover {
+    text-decoration: underline;
+
+}
+
+.logob {
+    align-items: center;
+    background: #cbcbcb;
+    border-radius: 10px;
+    display: flex;
+    height: 130px;
+    justify-content: center;
+    width: 90%;
 }
 
 .figure {
@@ -31,7 +100,7 @@
     flex-direction: column;
     height: -webkit-fill-available;
     justify-content: center;
-    width: -webkit-fill-available;    
+    width: -webkit-fill-available;
 }
 
 @media only screen and (min-width: 768px) {
