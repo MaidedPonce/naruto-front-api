@@ -3,6 +3,7 @@ import styles from "../styles/Home.module.css";
 import Image from "next/image";
 import Link from "next/link";
 
+
 const Character = ({productList}) => {
     return (
         <section className={styles.section}>
