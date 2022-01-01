@@ -1,0 +1,34 @@
+.notCont {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: -webkit-fill-available;
+    margin-bottom: -53px;
+    padding: 0 3%;
+}
+
+.four {
+    font-size: 4rem;
+    text-align: center;
+    margin-bottom: 0;
+}
+
+.lost {
+    font-size: 1rem;
+    text-align: center;
+}
+
+.imgNaruto {
+    z-index: -1;
+}
+
+@media only screen and (min-width: 768px) {
+    .notCont {
+        flex-direction: unset;
+        justify-content: space-evenly;
+        margin-bottom: -51px;
+    }
+    .titlesCont {
+        margin-bottom: 95px;
+    }
+}

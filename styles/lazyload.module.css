@@ -1,0 +1,15 @@
+.modalActive {
+    background-color: #111c2e;
+    position: fixed;
+    height: -webkit-fill-available;
+    width: -webkit-fill-available;
+    top: 0;
+    z-index: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.modalOf {
+    display: none;
+}
