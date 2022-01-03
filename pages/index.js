@@ -1,5 +1,7 @@
 import React from "react";
 import Home from "../containers/Home";
+import loadingContext from "../context/loadingContext";
+import lazyLoad from "../components/LazyLoad";
 
 export const getStaticProps = async () => {
     const response = await fetch(
@@ -15,7 +17,9 @@ export const getStaticProps = async () => {
     };
 };
 const PrincipalPage = ({ dataCharacters }) => {
-    return <Home dataCharacters={dataCharacters} />;
+    return (
+            <Home dataCharacters={dataCharacters} />
+    );
 };
 
 export default PrincipalPage;

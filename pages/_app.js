@@ -1,19 +1,18 @@
 // import App from 'next/app'
 import Layout from "../components/Layout/Layout";
-import loadingContext from "../context/loadingContext";
 import "../styles/Global.css";
-import lazyLoad from "../components/LazyLoad";
 
 /* export function reportWebVitals(metric) {
      console.log(metric) 
     serverAnalytics.log()
 }
  */
+
 function MyApp({ Component, pageProps }) {
     return (
         <>
             <Layout>
-                <Component {...pageProps} />
+                    <Component {...pageProps} />
             </Layout>
         </>
     );
