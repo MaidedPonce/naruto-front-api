@@ -6,17 +6,8 @@ import lazyLoad from "../components/LazyLoad";
 import loadingContext from "../context/loadingContext";
 import LoadingComponent from "../components/LoadingComponent";
 
-const Home = () => {
-    const { loading } = lazyLoad()
-    // const context = useContext(loadingContext);
-    const [productList, setProductList] = useState([]);
-
-    useEffect(() => {
-        window
-            .fetch("/api/avo")
-            .then((response) => response.json())
-            .then(({ data, length }) => setProductList(data));
-    }, []);
+const Home = ({ dataCharacters }) => {
+    const { loading } = lazyLoad();
 
     return (
         <>
@@ -24,7 +15,7 @@ const Home = () => {
                 <LoadingComponent />
             ) : (
                 <section className={styles.section}>
-                    {productList.map((item) => (
+                    {dataCharacters.map((item) => (
                         <div className={styles.sectionDiv}>
                             <div className={styles.card} key={item.id}>
                                 <div className={styles.cardC}>

@@ -5,20 +5,8 @@ import { useRouter } from "next/router";
 import lazyLoad from "../components/LazyLoad";
 import LoadingComponent from "../components/LoadingComponent";
 
-const Product = () => {
-    const [product, setProduct] = useState({});
+const Product = ({ dataCharacter }) => {
     const { loading } = lazyLoad();
-
-    const {
-        query: { id },
-    } = useRouter();
-
-    useEffect(() => {
-        window
-            .fetch(`/api/avo/${id}`)
-            .then((res) => res.json())
-            .then((data) => setProduct(data));
-    }, [id]);
 
     return (
         <>
@@ -26,29 +14,30 @@ const Product = () => {
                 <LoadingComponent />
             ) : (
                 <section>
-                    <div className={styles.divCont} key={product.id}>
+                    <div className={styles.divCont} key={dataCharacter.id}>
                         <figure className={styles.figureCharac}>
                             <Image
                                 width="190"
                                 height="190"
-                                src={product.image || "/naruto.jpg"}
+                                src={dataCharacter.image || "/naruto.jpg"}
                             />
                         </figure>
                         <div className={styles.detailsCharact}>
                             <span>
-                                <b>Nombre:</b> {product.name} {product.last}
+                                <b>Nombre:</b> {dataCharacter.name}{" "}
+                                {dataCharacter.last}
                             </span>
                             <span>
-                                <b>Aldea:</b> {product.aldea}
+                                <b>Aldea:</b> {dataCharacter.aldea}
                             </span>
                             <span>
-                                <b>Nacimiento:</b> {product.nacimiento}
+                                <b>Nacimiento:</b> {dataCharacter.nacimiento}
                             </span>
                             <span>
-                                <b>Clan:</b> {product.clan}
+                                <b>Clan:</b> {dataCharacter.clan}
                             </span>
                             <span>
-                                <b>Habilidades:</b> {product.habilidad}
+                                <b>Habilidades:</b> {dataCharacter.habilidad}
                             </span>
                         </div>
                     </div>
