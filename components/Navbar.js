@@ -6,7 +6,7 @@ import Image from "next/image";
 const Navbar = () => {
     return (
         <header className={styles.nav}>
-          <span>API - Naruto</span>  
+          <input className={styles.input} placeholder="Buscar..." /> 
           <figure className={styles.figureNav}>
               <Image width="80" height="50" src="/naruto.png" />
           </figure>

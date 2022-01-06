@@ -11,6 +11,12 @@
     width: auto;
 }
 
+.input {
+    margin-left: 1px;
+    height: 30px;
+    width: 135px;
+}
+
 .figureNav {
     display: flex;
     height: auto;
@@ -22,4 +28,3 @@
 .figureNav > span {
     flex: 1;
 }
-
