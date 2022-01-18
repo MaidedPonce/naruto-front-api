@@ -1,6 +1,7 @@
 import React from "react";
-import { useRouter } from "next";
+import { useRouter } from "next/router";
 import Product from "../../containers/Product";
+import LoadingComponent from "../../components/LoadingComponent";
 //`https://naruto-front-api-git-master-maidedponce.vercel.app/api/avo/`
 
 export const getStaticPaths = async () => {
@@ -16,7 +17,7 @@ export const getStaticPaths = async () => {
     }));
     return {
         paths,
-        fallback: false,
+        fallback: true,
     };
 };
 
@@ -35,7 +36,13 @@ export const getStaticProps = async ({ params }) => {
 };
 
 const ProductItem = ({ dataCharacter }) => {
-    return <Product dataCharacter={dataCharacter} />;
+    const router = useRouter()
+
+    if(router.isFallback) {
+       return <LoadingComponent/>
+    } else {
+        return <Product dataCharacter={dataCharacter} />
+    }
 };
 
 export default ProductItem;

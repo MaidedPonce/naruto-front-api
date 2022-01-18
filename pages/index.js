@@ -18,7 +18,7 @@ export const getStaticProps = async () => {
 };
 const PrincipalPage = ({ dataCharacters }) => {
     return (
-            <Home dataCharacters={dataCharacters} />
+        <Home dataCharacters={dataCharacters} />
     );
 };
 

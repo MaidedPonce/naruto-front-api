@@ -19,6 +19,8 @@ class MyDocument extends Document {
                         href="https://fonts.googleapis.com/css2?family=Outfit:wght@200&family=Quicksand:wght@300;500;700&family=Raleway:wght@200&family=Roboto+Mono:wght@100&display=swap"
                         rel="stylesheet"
                     ></link>
+                    <link rel="manifest" href="/manifest.json" />
+                    <link rel="apple-touch-icon" href="/foxlittle.png" />
                 </Head>
                 <body>
                     <Main />

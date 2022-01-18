@@ -14,12 +14,14 @@
 }
 
 .figureCharac > span {
+    border-radius: 25px !important;
     height: 300px !important;
     width: 300px !important;
 }
 
 .detailsCharact {
     display: flex;
+    color: white;
     flex-direction: column;
     font-size: 1.2rem;
 }
