@@ -1,0 +1,15 @@
+.searchContainer {
+    display: flex;
+    height: 3rem;
+    justify-content: center;
+    margin-bottom: 3rem;
+    width: 100%;
+}
+
+.search {
+    border-radius: 10px;
+    border: none;
+    padding-left: 0.75rem;
+    outline-color: orange;
+    width: 18rem;
+}

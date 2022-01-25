@@ -70,7 +70,7 @@ const Home = ({ dataCharacters }) => {
         const parsedData = JSON.parse(islocalStorage)
         const getCharacterExist = parsedData.filter(item => item.id === character.id);
         getCharacterExist.length !== 1 ? setExists(false) : setExists(true)
-        
+
     }
     console.log(exists)
     const getCharacters = dataCharacters.filter(character => {
@@ -78,7 +78,6 @@ const Home = ({ dataCharacters }) => {
     })
 
 
-    console.log(saveFavorite)
 
     return (
         <>
@@ -95,23 +94,26 @@ const Home = ({ dataCharacters }) => {
                                         <span>{item.name}</span>
                                         <span><b>{item.last}</b></span>
                                     </div>
-                                    <div className={styles.seeContainer}>
-
-                                        <Link href={`character/${item.id}`}>
-                                            <span className={styles.seeMore}>
-                                                Ver más...
-                                            </span>
-                                        </Link>
+                                    <div className={styles.buttonsContainer}>
+                                        <div className={styles.seeContainer}>
+                                            <Link href={`character/${item.id}`}>
+                                                <span className={styles.seeMore}>
+                                                    Ver más...
+                                                </span>
+                                            </Link>
+                                        </div>
+                                        <figure alt="Añadir" className={styles.figureAdd}>
+                                            <Image alt="añadir a favoritos" onClick={() => handleExistCharacter(item)} src="/add.png" width="40" height="40" />
+                                        </figure>
                                     </div>
                                 </div>
-                                <img className={styles.card} src={item.image} />
-                                <button onClick={() => handleExistCharacter(item)} >ADD</button>
+                                <img className={styles.card} alt={item.name} src={item.image} />
                             </div>
                         ))}
                     </section>
                 </>
             )}
-            <AlreadyExists exists={exists} />
+            <AlreadyExists exists={exists} setExists={setExists} />
         </>
     );
 };

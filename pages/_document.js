@@ -6,19 +6,9 @@ class MyDocument extends Document {
             <Html>
                 <Head>
                     <link rel="stylesheet" href="../styles/Global.css" />
-                    <link
-                        rel="preconnect"
-                        href="https://fonts.googleapis.com"
-                    />
-                    <link
-                        rel="preconnect"
-                        href="https://fonts.gstatic.com"
-                        crossorigin
-                    />
-                    <link
-                        href="https://fonts.googleapis.com/css2?family=Outfit:wght@200&family=Quicksand:wght@300;500;700&family=Raleway:wght@200&family=Roboto+Mono:wght@100&display=swap"
-                        rel="stylesheet"
-                    ></link>
+                    <link rel="preconnect" href="https://fonts.googleapis.com" />
+                    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+                    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100&display=swap" rel="stylesheet"></link>
                     <link rel="manifest" href="/manifest.json" />
                     <link rel="apple-touch-icon" href="/foxlittle.png" />
                 </Head>

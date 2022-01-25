@@ -28,3 +28,55 @@
 .figureNav > span {
     flex: 1;
 }
+
+.figureMenu {
+    display: flex;
+    margin: 0;
+}
+
+.divMenu {
+    background: blue;
+    max-height: 0;
+    overflow: hidden;
+    transition: all 0.5s;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 16rem;
+    z-index: 2;
+}
+
+.inputCheck {
+    position: absolute;
+    height: 3rem;
+    margin: 0;
+    width: 2rem;
+    z-index: 1;
+}
+
+.inputCheck:checked ~ .divMenu {
+    max-height: 100vh;
+}
+
+.imagen {
+    border-radius: 50px;
+    height: 50px;
+    width: 50px;
+}
+
+.containerFav {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    width: 15rem;
+    height: 4rem;
+    background: wheat;
+    border-radius: 10px;
+    margin: 1.5rem 0.5rem;
+}
+
+.figure {
+    height: 1.5rem;
+    margin: 10px;
+    width: 3rem;
+}
