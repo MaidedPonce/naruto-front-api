@@ -1,4 +1,4 @@
-import React, { useState, useReducer,useEffect } from "react";
+import React, { useState, useReducer, useEffect } from "react";
 import styles from "../styles/Home.module.css";
 import Image from "next/image";
 import Link from "next/link";
@@ -68,13 +68,13 @@ const Home = ({ dataCharacters }) => {
         let islocalStorage = localStorage.getItem("save_favorite_character")
         const parsedData = JSON.parse(islocalStorage)
         const getCharacterExist = parsedData === null ? <p>No hay personajes</p> : parsedData.filter(item => item.id === character.id);
-        if(getCharacterExist.length !== 1) {
+        if (getCharacterExist.length !== 1) {
             handleAddFavorite(character)
         } else {
             setExists(true)
         }
     }
-    
+
     const getCharacters = dataCharacters.filter(character => {
         return character.name.toLocaleLowerCase().includes(result.toLocaleLowerCase())
     })
