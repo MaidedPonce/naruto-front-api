@@ -4,22 +4,27 @@ import styles from "../styles/Nav.module.css";
 import Image from "next/image";
 
 const Navbar = () => {
-    const [favorites, setFavorites] = useState()
+    const [favorites, setFavorites] = useState([])
 
     const showFavorite = () => {
         const getFavorites = localStorage.getItem('save_favorite_character')
-        const getParseFavorites = JSON.parse(getFavorites)
-        setFavorites(getParseFavorites)
+        if (getFavorites === null) {
+            <p>Aquí no hay nada</p>
+        } else {
+            const getParseFavorites = JSON.parse(getFavorites)
+            setFavorites(getParseFavorites)
+        }
+
     }
 
-    useEffect(() => {
+   /*  useEffect(() => {
         showFavorite()
-    }, [])
-    console.log(favorites)
+    }, [favorites])
+ */
     return (
         <header className={styles.nav}>
             <div>
-                <input type="checkbox" className={styles.inputCheck} />
+                <input onChange={showFavorite} type="checkbox" className={styles.inputCheck} />
                 <figure className={styles.figureMenu}>
                     <Image width="35" height="50" src="/menuFavorites.png" />
                 </figure>

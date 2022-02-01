@@ -1,4 +1,4 @@
-import React, { useState, useReducer } from "react";
+import React, { useState, useReducer,useEffect } from "react";
 import styles from "../styles/Home.module.css";
 import Image from "next/image";
 import Link from "next/link";
@@ -62,21 +62,22 @@ const Home = ({ dataCharacters }) => {
             localStorage.setItem('save_favorite_character', JSON.stringify(parsedItem))
             dispatch({ type: "ADD_FAVORITE", payload: character })
         }
-        console.log(JSON.parse(islocalStorage))
     }
 
     const handleExistCharacter = (character) => {
         let islocalStorage = localStorage.getItem("save_favorite_character")
         const parsedData = JSON.parse(islocalStorage)
-        const getCharacterExist = parsedData.filter(item => item.id === character.id);
-        getCharacterExist.length !== 1 ? setExists(false) : setExists(true)
-
+        const getCharacterExist = parsedData === null ? <p>No hay personajes</p> : parsedData.filter(item => item.id === character.id);
+        if(getCharacterExist.length !== 1) {
+            handleAddFavorite(character)
+        } else {
+            setExists(true)
+        }
     }
-    console.log(exists)
+    
     const getCharacters = dataCharacters.filter(character => {
         return character.name.toLocaleLowerCase().includes(result.toLocaleLowerCase())
     })
-
 
 
     return (
