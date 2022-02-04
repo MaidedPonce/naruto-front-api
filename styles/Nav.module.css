@@ -47,7 +47,7 @@
 }
 
 .inputCheck {
-    position: absolute;
+    position: fixed;
     height: 3rem;
     margin: 0;
     opacity: 0;

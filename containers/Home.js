@@ -55,13 +55,19 @@ const Home = ({ dataCharacters }) => {
         if (!islocalStorage) {
             localStorage.setItem("save_favorite_character", JSON.stringify(INIT_STATE.favorites))
             parsedItem = character
+            saveCharacter(character)
         } else {
-            parsedItem = JSON.parse(islocalStorage)
-            let newCharacter = { ...character }
-            parsedItem.push(newCharacter)
-            localStorage.setItem('save_favorite_character', JSON.stringify(parsedItem))
-            dispatch({ type: "ADD_FAVORITE", payload: character })
+            saveCharacter(character)
         }
+    }
+
+    const saveCharacter = (character) => {
+        let islocalStorage = localStorage.getItem("save_favorite_character")
+        const parsedItem = JSON.parse(islocalStorage)
+        let newCharacter = { ...character }
+        parsedItem.push(newCharacter)
+        localStorage.setItem('save_favorite_character', JSON.stringify(parsedItem))
+        dispatch({ type: "ADD_FAVORITE", payload: character })
     }
 
     const handleExistCharacter = (character) => {
