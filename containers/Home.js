@@ -1,52 +1,25 @@
-import React, { useState, useReducer, useEffect } from "react";
-import styles from "../styles/Home.module.css";
-import Image from "next/image";
-import Link from "next/link";
+import React, { useState } from "react";
 import lazyLoad from "../components/LazyLoad";
-import loadingContext from "../context/loadingContext";
 import LoadingComponent from "../components/LoadingComponent";
-import { add_favorite } from "../redux/actions";
 import Search from "../components/Search";
 import AlreadyExists from "../components/AlreadyExists";
+import Character from "../components/Character";
+import styles from "../styles/Home.module.css";
+import useLazy from "../hooks/useLazy";
 
 const INIT_STATE = {
     favorites: [],
-    isExist: null
-}
-
-
-const reducer = (state = INIT_STATE, action) => {
-    switch (action.type) {
-        case "ADD_FAVORITE":
-            return {
-                ...state,
-                favorites: [...state.favorites, action.payload]
-            }
-        case "ALREADY_FEXIST":
-            return {
-                ...state,
-                favorites: [...state.favorites],
-                isExist: true
-            }
-        default:
-            return state
-
-    }
 }
 
 const Home = ({ dataCharacters }) => {
+    
+
     const [result, setResult] = useState("");
-    const [saveFavorite, dispatch] = useReducer(reducer, INIT_STATE)
     const [exists, setExists] = useState(false)
     const handleOnchange = (event) => {
         setResult(event.target.value)
     }
     const { loading } = lazyLoad();
-
-    /* const handleAddFavorite = (favorite) => {
-
-        dispatch({ type: "ADD_FAVORITE", payload: favorite })
-    } */
 
     const handleAddFavorite = (character) => {
         let islocalStorage = localStorage.getItem("save_favorite_character")
@@ -67,7 +40,7 @@ const Home = ({ dataCharacters }) => {
         let newCharacter = { ...character }
         parsedItem.push(newCharacter)
         localStorage.setItem('save_favorite_character', JSON.stringify(parsedItem))
-        dispatch({ type: "ADD_FAVORITE", payload: character })
+        
     }
 
     const handleExistCharacter = (character) => {
@@ -85,6 +58,7 @@ const Home = ({ dataCharacters }) => {
         return character.name.toLocaleLowerCase().includes(result.toLocaleLowerCase())
     })
 
+    
 
     return (
         <>
@@ -95,27 +69,7 @@ const Home = ({ dataCharacters }) => {
                     <Search result={result} handleOnchange={handleOnchange} />
                     <section className={styles.section}>
                         {getCharacters.map((item) => (
-                            <div className={styles.sectionDiv}>
-                                <div className={styles.characterData}>
-                                    <div className={styles.name}>
-                                        <span>{item.name}</span>
-                                        <span><b>{item.last}</b></span>
-                                    </div>
-                                    <div className={styles.buttonsContainer}>
-                                        <div className={styles.seeContainer}>
-                                            <Link href={`character/${item.id}`}>
-                                                <span className={styles.seeMore}>
-                                                    Ver más...
-                                                </span>
-                                            </Link>
-                                        </div>
-                                        <figure alt="Añadir" className={styles.figureAdd}>
-                                            <Image alt="añadir a favoritos" onClick={() => handleExistCharacter(item)} src="/add.png" width="40" height="40" />
-                                        </figure>
-                                    </div>
-                                </div>
-                                <img className={styles.card} alt={item.name} src={item.image} />
-                            </div>
+                            <Character key={item.id} item={item} handleExistCharacter={handleExistCharacter} />
                         ))}
                     </section>
                 </>
