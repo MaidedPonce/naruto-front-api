@@ -1,11 +1,10 @@
-import React, { useState, useReducer, useEffect } from "react";
+import React, { useState, useReducer, useEffect, useRef } from "react";
 import styles from "../styles/Home.module.css";
 import Image from "next/image";
 import Link from "next/link";
 import lazyLoad from "../components/LazyLoad";
 import loadingContext from "../context/loadingContext";
 import LoadingComponent from "../components/LoadingComponent";
-import { add_favorite } from "../redux/actions";
 import Search from "../components/Search";
 import AlreadyExists from "../components/AlreadyExists";
 
@@ -38,11 +37,11 @@ const Home = ({ dataCharacters }) => {
     const [result, setResult] = useState("");
     const [saveFavorite, dispatch] = useReducer(reducer, INIT_STATE)
     const [exists, setExists] = useState(false)
+    const characterRef = useRef(null)
     const handleOnchange = (event) => {
         setResult(event.target.value)
     }
     const { loading } = lazyLoad();
-
     /* const handleAddFavorite = (favorite) => {
 
         dispatch({ type: "ADD_FAVORITE", payload: favorite })
@@ -93,7 +92,7 @@ const Home = ({ dataCharacters }) => {
             ) : (
                 <>
                     <Search result={result} handleOnchange={handleOnchange} />
-                    <section className={styles.section}>
+                    <section ref={characterRef} className={styles.section}>
                         {getCharacters.map((item) => (
                             <div className={styles.sectionDiv}>
                                 <div className={styles.characterData}>

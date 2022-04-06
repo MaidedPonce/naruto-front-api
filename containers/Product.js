@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import styles from "../styles/Product.module.css";
 import Image from "next/image";
 import { useRouter } from "next/router";
@@ -8,6 +8,9 @@ import LoadingComponent from "../components/LoadingComponent";
 const Product = ({ dataCharacter }) => {
     const { loading } = lazyLoad();
 
+    /* const observer = new IntersectionObserver(entries => {
+
+    }) */
     return (
         <>
             {loading ? (
