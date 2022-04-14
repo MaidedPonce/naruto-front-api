@@ -1,6 +1,5 @@
 import React from "react";
 import Home from "../containers/Home";
-import loadingContext from "../context/loadingContext";
 import lazyLoad from "../components/LazyLoad";
 
 export const getStaticProps = async () => {

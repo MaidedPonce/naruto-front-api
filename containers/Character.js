@@ -1,11 +1,11 @@
 import React, { useEffect, useState } from "react";
-import styles from "../styles/Product.module.css";
+import styles from "../styles/Character.module.css";
 import Image from "next/image";
 import { useRouter } from "next/router";
 import lazyLoad from "../components/LazyLoad";
 import LoadingComponent from "../components/LoadingComponent";
 
-const Product = ({ dataCharacter }) => {
+const Character = ({ dataCharacter }) => {
     const { loading } = lazyLoad();
 
     return (
@@ -47,4 +47,4 @@ const Product = ({ dataCharacter }) => {
     );
 };
 
-export default Product;
+export default Character;

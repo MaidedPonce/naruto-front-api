@@ -1,42 +1,14 @@
-import React, { useState, useReducer, useEffect } from "react";
+import React, { useState, useEffect } from "react";
 import styles from "../styles/Home.module.css";
 import Image from "next/image";
 import Link from "next/link";
 import lazyLoad from "../components/LazyLoad";
-import loadingContext from "../context/loadingContext";
 import LoadingComponent from "../components/LoadingComponent";
-import { add_favorite } from "../redux/actions";
 import Search from "../components/Search";
 import AlreadyExists from "../components/AlreadyExists";
 
-const INIT_STATE = {
-    favorites: [],
-    isExist: null
-}
-
-
-const reducer = (state = INIT_STATE, action) => {
-    switch (action.type) {
-        case "ADD_FAVORITE":
-            return {
-                ...state,
-                favorites: [...state.favorites, action.payload]
-            }
-        case "ALREADY_FEXIST":
-            return {
-                ...state,
-                favorites: [...state.favorites],
-                isExist: true
-            }
-        default:
-            return state
-
-    }
-}
-
 const Home = ({ dataCharacters }) => {
     const [result, setResult] = useState("");
-    const [saveFavorite, dispatch] = useReducer(reducer, INIT_STATE)
     const [exists, setExists] = useState(false)
     const handleOnchange = (event) => {
         setResult(event.target.value)
