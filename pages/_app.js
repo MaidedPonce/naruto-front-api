@@ -1,6 +1,10 @@
 // import App from 'next/app'
+import { Provider } from "react-redux";
+import { createStore, compose, applyMiddleware } from "redux";
+import narutoReducer from "../reducers/narutoReducer"
 import Layout from "../components/Layout/Layout";
 import "../styles/Global.css";
+import { logActions } from "../middleware";
 
 /* export function reportWebVitals(metric) {
      console.log(metric) 
@@ -9,10 +13,16 @@ import "../styles/Global.css";
  */
 
 function MyApp({ Component, pageProps }) {
+
+    const composeEnhancers = compose(typeof window !== "undefined" && window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__(), applyMiddleware(logActions))
+    const store = createStore(narutoReducer, composeEnhancers)
+
     return (
         <>
             <Layout>
+                <Provider store={store}>
                     <Component {...pageProps} />
+                </Provider>
             </Layout>
         </>
     );
