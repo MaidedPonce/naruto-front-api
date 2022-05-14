@@ -12,7 +12,7 @@ class MyDocument extends Document {
                     <link rel="manifest" href="/manifest.json" />
                     <link rel="apple-touch-icon" href="/foxlittle.png" />
                 </Head>
-                <body>
+                <body id="root">
                     <Main />
                     <div id="loading"></div>
                     <NextScript />

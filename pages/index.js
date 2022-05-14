@@ -1,6 +1,5 @@
 import React from "react";
 import Home from "../containers/Home";
-import loadingContext from "../context/loadingContext";
 import lazyLoad from "../components/LazyLoad";
 
 export const getStaticProps = async () => {
@@ -8,7 +7,7 @@ export const getStaticProps = async () => {
         `https://naruto-front-api-git-master-maidedponce.vercel.app/api/avo`
     );
 
-    const { data: dataCharacters } = await response.json();
+    const { data: dataCharacters } = await response.json()
 
     return {
         props: {
@@ -22,4 +21,4 @@ const PrincipalPage = ({ dataCharacters }) => {
     );
 };
 
-export default PrincipalPage;
+export default PrincipalPage

@@ -23,6 +23,7 @@
     margin-bottom: 20px;
     width: inherit;
     position: relative;
+    object-fit: cover;
 }
 
 .characterData {

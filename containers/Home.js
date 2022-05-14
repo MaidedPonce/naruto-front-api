@@ -1,12 +1,11 @@
 import React, { useState, useReducer, useEffect, useRef } from "react";
 import styles from "../styles/Home.module.css";
-import Image from "next/image";
-import Link from "next/link";
 import lazyLoad from "../components/LazyLoad";
 import loadingContext from "../context/loadingContext";
 import LoadingComponent from "../components/LoadingComponent";
 import Search from "../components/Search";
 import AlreadyExists from "../components/AlreadyExists";
+import Card from "../components/Card";
 
 const INIT_STATE = {
     favorites: [],
@@ -84,7 +83,6 @@ const Home = ({ dataCharacters }) => {
         return character.name.toLocaleLowerCase().includes(result.toLocaleLowerCase())
     })
 
-
     return (
         <>
             {loading ? (
@@ -94,27 +92,7 @@ const Home = ({ dataCharacters }) => {
                     <Search result={result} handleOnchange={handleOnchange} />
                     <section ref={characterRef} className={styles.section}>
                         {getCharacters.map((item) => (
-                            <div className={styles.sectionDiv}>
-                                <div className={styles.characterData}>
-                                    <div className={styles.name}>
-                                        <span>{item.name}</span>
-                                        <span><b>{item.last}</b></span>
-                                    </div>
-                                    <div className={styles.buttonsContainer}>
-                                        <div className={styles.seeContainer}>
-                                            <Link href={`character/${item.id}`}>
-                                                <span className={styles.seeMore}>
-                                                    Ver más...
-                                                </span>
-                                            </Link>
-                                        </div>
-                                        <figure alt="Añadir" className={styles.figureAdd}>
-                                            <Image alt="añadir a favoritos" onClick={() => handleExistCharacter(item)} src="/add.png" width="40" height="40" />
-                                        </figure>
-                                    </div>
-                                </div>
-                                <img className={styles.card} alt={item.name} src={item.image} />
-                            </div>
+                          <Card item={item} handleExistCharacter={handleExistCharacter} /> 
                         ))}
                     </section>
                 </>
