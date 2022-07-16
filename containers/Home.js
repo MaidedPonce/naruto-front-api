@@ -84,19 +84,15 @@ const Home = ({ dataCharacters }) => {
     })
 
     return (
+
         <>
-            {loading ? (
-                <LoadingComponent />
-            ) : (
-                <>
-                    <Search result={result} handleOnchange={handleOnchange} />
-                    <section ref={characterRef} className={styles.section}>
-                        {getCharacters.map((item) => (
-                          <Card item={item} handleExistCharacter={handleExistCharacter} /> 
-                        ))}
-                    </section>
-                </>
-            )}
+            <Search result={result} handleOnchange={handleOnchange} />
+            <section ref={characterRef} className={styles.section}>
+                {getCharacters.map((item) => (
+                    <Card item={item} handleExistCharacter={handleExistCharacter} />
+                ))}
+            </section>
+
             <AlreadyExists exists={exists} setExists={setExists} />
         </>
     );

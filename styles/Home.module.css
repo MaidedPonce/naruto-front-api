@@ -5,14 +5,19 @@
     padding: 0 3%;
 }
 
-.sectionDiv {
+.sectionDiv, .sectionDivLoading {
     height: 300px;
     margin-bottom: 40px;
     width: 300px;
 }
 
+.sectionDivLoading {
+    background-color: #080d4a63;
+    display: flex;
+    justify-content: center;
+}
 
-.card {
+.card, .sectionDivLoading {
     align-items: center;
     border-radius: 3%;
     box-shadow: 1px 1px 7px 4px #042034;

@@ -77,6 +77,31 @@
 }
 
 .figure {
-    margin: 2rem 1.5rem;
     width: 3rem;
 }
+
+.figure:nth-child(1) {
+    padding: 0 3%;
+}
+
+
+
+@media only screen and (min-width: 425px){
+    .figure:nth-child(1) {
+        padding: 0 7%;
+    }    
+}
+
+@media only screen and (min-width: 770px){
+    .figure:nth-child(1) {
+        padding: 0 9%;
+    }    
+}
+
+@media only screen and (min-width: 1024px){
+    .figure:nth-child(1) {
+        padding: 0 12%;
+    }    
+}
+
+
