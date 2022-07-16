@@ -4,7 +4,7 @@ You are able to find characters and watch their skills.
 
 Here you will find the available url:
 
-[naruto-front-api.vercel.app](naruto-front-api.vercel.app)
+[naruto-front-api.vercel.app](https://naruto-front-api.vercel.app/)
 
 
 ------------------------------------------
