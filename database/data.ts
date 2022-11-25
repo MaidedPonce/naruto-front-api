@@ -20,7 +20,7 @@ export const data: any = {
         last: "Haruno",
         id: "6trfgkkj",
         sku: "AX4M8SJV",
-        image: "/Sakura_Haruno.png",
+        image: "/sakura.png",
         aldea: "Aldea Oculta de la Hoja",
         nacimiento: "28 de marzo",
         clan: "Uchiha",

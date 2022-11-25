@@ -13,7 +13,10 @@ const Product = ({ dataCharacter }) => {
     }) */
     return (
         <>
-                <section >
+            {loading ? (
+                <LoadingComponent />
+            ) : (
+                <section>
                     <div className={styles.divCont} key={dataCharacter.id}>
                         <figure className={styles.figureCharac}>
                             <Image
@@ -42,7 +45,7 @@ const Product = ({ dataCharacter }) => {
                         </div>
                     </div>
                 </section>
-            
+            )}
         </>
     );
 };
