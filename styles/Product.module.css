@@ -1,7 +1,6 @@
 .divCont {
     align-items: center;
     display: flex;
-    background-color: #00000080;
     flex-direction: column;
     height: 100vh;
     justify-content: space-evenly;
