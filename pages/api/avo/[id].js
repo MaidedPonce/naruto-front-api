@@ -1,13 +1,12 @@
-import { NextApiRequest, NextApiResponse } from 'next'
 import DB from '@database'
 
-const AvoDetail = async (req: NextApiRequest, res: NextApiResponse) => {
+const AvoDetail = async (req, res) => {
   try {
     // Generally, you would not want this in your apps.
     // See more in 'cors.js'
 
     const db = new DB()
-    const avoId = req.query.id as string
+    const avoId = req.query.id
 
     const avo = await db.getById(avoId)
 

@@ -9,7 +9,7 @@ class Database {
     return asArray
   }
 
-  async getById(id: string){
+  async getById(id){
     if (!Object.prototype.hasOwnProperty.call(allData, id)) {
       return null
     }

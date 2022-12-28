@@ -1,7 +1,8 @@
 // import App from 'next/app'
+import { Provider } from "react-redux";
 import Layout from "../components/Layout/Layout";
 import "../styles/Global.css";
-
+import { store } from "../redux/store";
 /* export function reportWebVitals(metric) {
      console.log(metric) 
     serverAnalytics.log()
@@ -11,9 +12,11 @@ import "../styles/Global.css";
 function MyApp({ Component, pageProps }) {
     return (
         <>
-            <Layout>
+            <Provider store={store}>
+                <Layout>
                     <Component {...pageProps} />
-            </Layout>
+                </Layout>
+            </Provider>
         </>
     );
 }

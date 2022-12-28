@@ -1,7 +1,6 @@
-import { IncomingMessage, ServerResponse } from 'http'
 import DB from '@database'
 
-const allAvos = async (req: IncomingMessage, res: ServerResponse) => {
+const allAvos = async (req, res) => {
   try {
     // Generally, you would not want this in your apps.
     // See more in 'cors.js'

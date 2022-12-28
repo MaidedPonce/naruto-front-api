@@ -2,7 +2,7 @@
     "compilerOptions": {
         "baseUrl": ".",
         "paths": {
-            "@database": ["database/db.ts"],
+            "@database": ["database/db.js"],
             "@componentes/*": ["components/*"],
             "@containers/*": ["containers/*"]
         },
@@ -23,14 +23,14 @@
     },
     "exclude": ["node_modules"],
     "include": [
-        "next-env.d.ts",
-        "**/*.ts",
-        "**/*.tsx",
-        "pages/api/avo/index.ts",
-        "pages/api/avo/[id].ts",
-        "pages/api/avo/index.ts",
-        "pages/api/avo/[id].ts",
-        "database/data.ts",
+        "next-env.d.js",
+        "**/*.js",
+        "**/*.jsx",
+        "pages/api/avo/index.js",
+        "pages/api/avo/[id].js",
+        "pages/api/avo/index.js",
+        "pages/api/avo/[id].js",
+        "database/data.js",
         "database/db.js"
     ]
 }

@@ -6,12 +6,14 @@
   "scripts": {
     "dev": "next",
     "start": "next start",
-    "build": "next build"
+    "build": "next build",
+    "lint": "next lint"
   },
   "keywords": [],
   "author": "maided <maided.h.p90@gmail.com>",
   "license": "ISC",
   "dependencies": {
+    "@reduxjs/toolkit": "^1.8.3",
     "next": "^12.0.7",
     "postcss": "^8.1.0",
     "react": "^17.0.2",
@@ -22,6 +24,8 @@
   "devDependencies": {
     "@types/node": "^17.0.2",
     "@types/react": "^17.0.37",
+    "eslint": "8.30.0",
+    "eslint-config-next": "13.1.1",
     "typescript": "^4.5.4"
   }
 }
