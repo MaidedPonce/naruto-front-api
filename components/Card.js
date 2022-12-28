@@ -1,4 +1,4 @@
-import React, { useEffect, useLayoutEffect, useState } from 'react'
+import React, { useLayoutEffect, useState } from 'react'
 import styles from "../styles/Home.module.css";
 import Image from "next/image";
 import Link from "next/link";

@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from "react";
-import styles from "../styles/lazyload.module.css";
 
-function lazyLoad() {
+function LazyLoad() {
     const [loading, setLoading] = useState(false);
 
     useEffect(() => {
@@ -16,4 +15,4 @@ function lazyLoad() {
     };
 }
 
-export default lazyLoad;
+export default LazyLoad;

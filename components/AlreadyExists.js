@@ -9,7 +9,7 @@ const AlreadyExists = ({ exists, setExists }) => {
                 Ese personaje ya lo tienes guardado en favoritos
             </p>
             <figure onClick={() => setExists(false)} className={styles.figure}>
-                <Image src="/equis.png" height="30" width="30" />
+                <Image src="/equis.png" height="30" width="30" alt='Botón para cerrar alerta' />
             </figure>
         </div>);
 };

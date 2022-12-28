@@ -1,5 +1,4 @@
-import React, { useEffect, useState } from "react";
-import Link from "next/link";
+import React, { useState } from "react";
 import styles from "../styles/Nav.module.css";
 import Image from "next/image";
 
@@ -17,10 +16,10 @@ const Navbar = () => {
 
     }
 
-   /*  useEffect(() => {
-        showFavorite()
-    }, [favorites])
- */
+    /*  useEffect(() => {
+         showFavorite()
+     }, [favorites])
+  */
     return (
         <header className={styles.nav}>
             <div>
@@ -39,11 +38,9 @@ const Navbar = () => {
                         {
                             favorites === false ? "Cargando..." :
                                 favorites.map(i =>
-                                    <div className={styles.containerFav}>
-
+                                    <div key={i} className={styles.containerFav}>
                                         <img className={styles.imagen} src={i.image} />
                                         <p className={styles.nombre}>{i.name}</p>
-
                                     </div>)
                         }
                     </div>

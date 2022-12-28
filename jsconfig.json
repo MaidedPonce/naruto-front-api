@@ -4,7 +4,8 @@
         "paths": {
             "@database": ["database/db.js"],
             "@componentes/*": ["components/*"],
-            "@containers/*": ["containers/*"]
+            "@containers/*": ["containers/*"],
+            "@styles/*": ["styles/*"]
         },
         "target": "es6",
         "lib": ["dom", "dom.iterable", "esnext"],
