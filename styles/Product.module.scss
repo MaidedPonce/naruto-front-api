@@ -1,3 +1,5 @@
+@import '@styles/basics.scss';
+
 .divCont {
     align-items: center;
     display: flex;
@@ -6,12 +8,20 @@
     height: 100vh;
     justify-content: space-evenly;
     padding: 0 3%;
+    @include tablet-size {
+        align-items: center;
+        flex-direction: unset;
+        height: 48vh;
+    }
 }
 
 .figureCharac {
     height: 300px;
     margin: 0;
     width: 300px;
+    @include tablet-size {
+        margin: 0 30px 0 0;
+    }
 }
 
 .figureCharac > span {
@@ -29,16 +39,4 @@
 
 .detailsCharact span {
     margin: 7px 0;
-}
-
-
-@media only screen and (min-width: 768px) {
-    .divCont {
-        align-items: center;
-        flex-direction: unset;
-        height: 48vh;
-    }
-    .figureCharac {
-        margin: 0 30px 0 0;
-    }
 }

@@ -1,8 +1,19 @@
+@import '@styles/basics.scss';
+
 .section {
     align-items: center;
     display: flex;
     flex-direction: column;
     padding: 0 3%;
+    @include tablet-size {
+        display: grid;
+        grid-template-columns: repeat(2, auto);
+        justify-content: space-between;
+        row-gap: 20px;
+    }
+    @include portatil {
+        grid-template-columns: repeat(3, auto);
+    }
 }
 
 .sectionDiv, .sectionDivLoading {
@@ -170,19 +181,4 @@
 
 .figureAdd:hover {
     background-color: #e4e4e473;
-}
-
-@media only screen and (min-width: 768px) {
-    .section {
-        display: grid;
-        grid-template-columns: repeat(2, auto);
-        justify-content: space-between;
-        row-gap: 20px;
-    }
-}
-
-@media only screen and (min-width: 1024px) {
-    .section {
-        grid-template-columns: repeat(3, auto);
-    }
 }

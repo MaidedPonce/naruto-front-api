@@ -77,31 +77,12 @@
 }
 
 .figure {
-    width: 3rem;
+    margin: 0;
+    height: 6rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0 2%;
+    width: 4rem;
 }
-
-.figure:nth-child(1) {
-    padding: 0 3%;
-}
-
-
-
-@media only screen and (min-width: 425px){
-    .figure:nth-child(1) {
-        padding: 0 7%;
-    }    
-}
-
-@media only screen and (min-width: 770px){
-    .figure:nth-child(1) {
-        padding: 0 9%;
-    }    
-}
-
-@media only screen and (min-width: 1024px){
-    .figure:nth-child(1) {
-        padding: 0 12%;
-    }    
-}
-
 

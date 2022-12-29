@@ -1,5 +1,5 @@
 import React, { useEffect, useRef, useState } from "react";
-import styles from "../styles/Product.module.css";
+import styles from "../styles/Product.module.scss";
 import Image from "next/image";
 import { useRouter } from "next/router";
 import lazyLoad from "../components/LazyLoad";

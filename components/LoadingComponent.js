@@ -1,6 +1,6 @@
 import React, { useContext } from "react";
 import Image from "next/image";
-import styles from "../styles/lazyload.module.css";
+import styles from "../styles/Lazyload.module.scss";
 import lazyLoad from "./LazyLoad";
 
 const LoadingComponent = () => {

@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import styles from "../styles/Nav.module.css";
+import styles from "../styles/Nav.module.scss";
 import Image from "next/image";
 
 const Navbar = () => {
@@ -24,15 +24,12 @@ const Navbar = () => {
         <header className={styles.nav}>
             <div>
                 <input onChange={showFavorite} type="checkbox" className={styles.inputCheck} />
-                <figure className={styles.figureMenu}>
                     <Image width="35" height="50" src="/menuFavorites.png" />
-                </figure>
-
                 <div className={styles.divMenu}>
-
-                    <figure className={styles.figure}>
+                    <figure className={styles.figure} >
                         <Image src="/equis.png" height="30" width="30" />
                     </figure>
+                    
 
                     <div className={styles.character}>
                         {

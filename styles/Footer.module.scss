@@ -1,5 +1,7 @@
+@import '@styles/basics.scss';
+
 .footer {
-    background: #3e3e48;
+    background: $footer-background;
     color: white;
     display: flex;
     flex-direction: column;
@@ -12,6 +14,11 @@
 
 .footerSM {
     align-items: center;
+    @include cel-400 {
+        align-items: center;
+        display: flex;
+        justify-content: space-evenly;
+    }
 }
 
 .figureCodepen {
@@ -23,22 +30,6 @@
     font-size: 2rem;
 }
 
-.figureCodepen > img {
-    height: inherit;
-    width: inherit;
-}
-
 .containerSM {
     display: flex;
-}
-
-@media only screen and (min-width: 400px) {
-    .footerSM {
-        align-items: center;
-        display: flex;
-        justify-content: space-evenly;
-    }
-    .spanDerec {
-        text-align: center;
-    }
 }

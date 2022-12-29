@@ -1,6 +1,6 @@
 import Image from 'next/image';
 import React from 'react';
-import styles from "../styles/alreadyExists.module.css"
+import styles from "@styles/AlreadyExists.module.scss"
 
 const AlreadyExists = ({ exists, setExists }) => {
     return (

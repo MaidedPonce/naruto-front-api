@@ -1,6 +1,6 @@
 import React from "react";
 import Image from "next/image";
-import styles from "../styles/NotFound.module.css";
+import styles from "../styles/NotFound.module.scss";
 import lazyLoad from "./LazyLoad";
 import LoadingComponent from "./LoadingComponent";
 

@@ -1,5 +1,5 @@
 import React, { useState, useReducer, useEffect, useRef } from "react";
-import styles from "../styles/Home.module.css";
+import styles from "@styles/Home.module.scss";
 import lazyLoad from "../components/LazyLoad";
 import loadingContext from "../context/loadingContext";
 import LoadingComponent from "../components/LoadingComponent";

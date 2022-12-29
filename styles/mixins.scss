@@ -1,0 +1,17 @@
+@mixin cel-400 {
+    @media only screen and (min-width: 400px) {
+        @content;
+    }
+}
+
+@mixin tablet-size {
+    @media only screen and (min-width: 768px) {
+        @content;
+    }
+}
+
+@mixin portatil {
+    @media only screen and (min-width: 1024px) {
+        @content;
+    }
+}
