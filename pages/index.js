@@ -1,24 +1,18 @@
-import React from "react";
-import Home from "../containers/Home";
-import lazyLoad from "../components/LazyLoad";
+import React from 'react'
+import Home from '../containers/Home'
+import { getServiceCharacter } from '../services'
 
 export const getStaticProps = async () => {
-    const response = await fetch(
-        `https://naruto-front-api-git-master-maidedponce.vercel.app/api/avo`
-    );
+  const queryClient = await getServiceCharacter()
 
-    const { data: dataCharacters } = await response.json()
-
-    return {
-        props: {
-            dataCharacters,
-        },
-    };
-};
-const PrincipalPage = ({ dataCharacters }) => {
-    return (
-        <Home dataCharacters={dataCharacters} />
-    );
-};
+  return {
+    props: {
+      dataCharacters: queryClient?.data?.data
+    }
+  }
+}
+const PrincipalPage = ({ dataCharacters }) => {  
+  return <Home dataCharacters={dataCharacters} />
+}
 
 export default PrincipalPage

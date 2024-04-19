@@ -45,7 +45,6 @@ const Home = ({ dataCharacters }) => {
 
         dispatch({ type: "ADD_FAVORITE", payload: favorite })
     } */
-
     const handleAddFavorite = (character) => {
         let islocalStorage = localStorage.getItem("save_favorite_character")
         let parsedItem;
@@ -79,10 +78,9 @@ const Home = ({ dataCharacters }) => {
         }
     }
 
-    const getCharacters = dataCharacters.filter(character => {
+    const getCharacters = dataCharacters?.filter(character => {
         return character.name.toLocaleLowerCase().includes(result.toLocaleLowerCase())
     })
-
     return (
 
         <>

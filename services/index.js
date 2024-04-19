@@ -1,0 +1,1 @@
+export { getCharacters, getServiceCharacter } from './get-characters'

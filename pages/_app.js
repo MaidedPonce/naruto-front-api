@@ -1,6 +1,7 @@
 // import App from 'next/app'
-import Layout from "../components/Layout/Layout";
-import "../styles/Global.css";
+import { QueryClient, QueryClientProvider } from '@tanstack/react-query'
+import Layout from '../components/Layout/Layout'
+import '../styles/Global.css'
 
 /* export function reportWebVitals(metric) {
      console.log(metric) 
@@ -8,14 +9,16 @@ import "../styles/Global.css";
 }
  */
 
+const queryClient = new QueryClient()
+
 function MyApp({ Component, pageProps }) {
-    return (
-        <>
-            <Layout>
-                    <Component {...pageProps} />
-            </Layout>
-        </>
-    );
+  return (
+    <QueryClientProvider client={queryClient}>
+      <Layout>
+        <Component {...pageProps} />
+      </Layout>
+    </QueryClientProvider>
+  )
 }
 
 // Only uncomment this method if you have blocking data requirements for
@@ -30,4 +33,4 @@ function MyApp({ Component, pageProps }) {
 //   return { ...appProps }
 // }
 
-export default MyApp;
+export default MyApp
