@@ -3,11 +3,10 @@ import Home from '../containers/Home'
 import { getServiceCharacter } from '../services'
 
 export const getStaticProps = async () => {
-  const queryClient = await getServiceCharacter()
 
   return {
     props: {
-      dataCharacters: queryClient?.data?.data
+      dataCharacters: characters?.data?.data
     }
   }
 }
