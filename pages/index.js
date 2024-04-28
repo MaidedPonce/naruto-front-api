@@ -3,6 +3,7 @@ import Home from '../containers/Home'
 import { getServiceCharacter } from '../services'
 
 export const getStaticProps = async () => {
+  const characters = await getServiceCharacter()
 
   return {
     props: {

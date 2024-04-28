@@ -2,14 +2,14 @@ import React from 'react'
 import { useRouter } from 'next/router'
 import Product from '../../containers/Product'
 import LoadingComponent from '../../components/LoadingComponent'
-import { getCharacterById, getCharacters } from '../../services'
+import { getServiceCharacter, getServiceCharacterById } from '../../services'
 //`https://naruto-front-api-git-master-maidedponce.vercel.app/api/avo/`
 
 export const getStaticPaths = async () => {
-  const response = await getCharacters()
+  const response = await getServiceCharacter()
   const { data: characterList } = response
 
-  const paths = characterList?.data.map((character) => ({
+  const paths = await characterList?.data.map((character) => ({
     params: {
       id: character.id
     }
@@ -24,8 +24,7 @@ export const getStaticProps = async ({ params }) => {
   /*  const response = await fetch(
         `https://naruto-front-api-git-master-maidedponce.vercel.app/api/avo/${params.id}`
     ); */
-  const dataCharacter = await getCharacterById({ id: params.id })
-
+  const dataCharacter = await getServiceCharacterById({ id: params.id })
   return {
     props: {
       dataCharacter: dataCharacter.data
@@ -35,7 +34,6 @@ export const getStaticProps = async ({ params }) => {
 
 const ProductItem = ({ dataCharacter }) => {
   const router = useRouter()
-
   if (router.isFallback) {
     return <LoadingComponent />
   } else {

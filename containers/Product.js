@@ -6,6 +6,7 @@ import lazyLoad from "../components/LazyLoad";
 import LoadingComponent from "../components/LoadingComponent";
 
 const Product = ({ dataCharacter }) => {
+    console.log(dataCharacter)
     const { loading } = lazyLoad();
 
     /* const observer = new IntersectionObserver(entries => {
