@@ -2,7 +2,7 @@
  
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-    staticPageGenerationTimeout: 250
+    staticPageGenerationTimeout: 100
   }
    
 module.exports = nextConfig

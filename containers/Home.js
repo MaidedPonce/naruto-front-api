@@ -86,8 +86,8 @@ const Home = ({ dataCharacters }) => {
         <>
             <Search result={result} handleOnchange={handleOnchange} />
             <section ref={characterRef} className={styles.section}>
-                {getCharacters.map((item) => (
-                    <Card item={item} handleExistCharacter={handleExistCharacter} />
+                {getCharacters.map((item, index) => (
+                    <Card key={index} item={item} handleExistCharacter={handleExistCharacter} />
                 ))}
             </section>
 
