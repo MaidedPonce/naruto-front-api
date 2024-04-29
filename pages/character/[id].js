@@ -14,8 +14,9 @@ export const getStaticPaths = async () => {
       id: character.id
     }
   }))
+  console.log(paths)
   return {
-    paths,
+    paths: paths,
     fallback: true
   }
 }
